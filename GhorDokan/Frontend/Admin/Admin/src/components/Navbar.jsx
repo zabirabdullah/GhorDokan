@@ -8,6 +8,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-3 transition hover:opacity-80">
           <img src={logo} alt="GhorDokan logo" className="h-10 w-10 rounded-full object-cover" />
           <span className="text-xl font-bold tracking-wide">GhorDokan</span>
+          
         </Link>
         <nav className="flex items-center gap-6 text-sm font-medium">
           <button className="transition hover:opacity-80">Log out</button>
