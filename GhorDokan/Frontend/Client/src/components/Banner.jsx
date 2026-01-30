@@ -24,7 +24,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-6">
+    <section className="mx-auto w-full max-w-7xl px-4 sm:px-6">
       <div className="relative overflow-hidden rounded-2xl shadow">
         <div
           className="flex transition-transform duration-500 ease-out"
@@ -35,7 +35,7 @@ const Banner = () => {
               <img
                 src={banner}
                 alt={`Banner ${index + 1}`}
-                className="h-[320px] w-full object-cover sm:h-[400px]"
+                className="h-[220px] w-full object-cover sm:h-[320px] lg:h-[400px]"
               />
             </div>
           ))}
@@ -43,7 +43,7 @@ const Banner = () => {
         <button
           type="button"
           onClick={handlePrev}
-          className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl"
+          className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl sm:left-4 sm:h-12 sm:w-12"
           aria-label="Previous slide"
         >
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -53,7 +53,7 @@ const Banner = () => {
         <button
           type="button"
           onClick={handleNext}
-          className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl"
+          className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl sm:right-4 sm:h-12 sm:w-12"
           aria-label="Next slide"
         >
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

@@ -8,17 +8,18 @@ const ProductCard = () => {
   const handleIncrease = () => setQuantity((prev) => prev + 1);
 
   return (
-    /* w-[22%] ensures 4 cards fit with space, 
-       and the 5th is partially visible to encourage scrolling.
+    /* On mobile: full slider width minus padding/gaps for single card view
+       On tablet: 2 cards side by side
+       On desktop: 4 cards in view
     */
-    <div className="flex w-[22%] min-w-[265px] flex-shrink-0 flex-col rounded-[20px] border border-gray-100 bg-white p-3 shadow-md">
+    <div className="flex w-[calc(100%-2rem)] min-w-[240px] flex-shrink-0 flex-col rounded-[20px] border border-gray-100 bg-white p-3 shadow-md sm:w-[48%] sm:min-w-[260px] lg:w-[22%] lg:min-w-[265px]">
       
       {/* Image Container */}
       <div className="flex justify-center rounded-xl bg-[#f8f8f8] py-4">
         <img 
           src={productImage} 
           alt="Honey" 
-          className="h-42 w-auto object-contain mix-blend-multiply" 
+          className="h-28 w-auto object-contain mix-blend-multiply sm:h-32 lg:h-40" 
         />
       </div>
 

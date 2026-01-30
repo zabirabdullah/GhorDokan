@@ -14,13 +14,13 @@ const ProductSlider = () => {
   };
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-6">
+    <section className="mx-auto w-full max-w-7xl px-4 sm:px-6">
       
       <div className="relative mt-6">
         <button
           type="button"
           onClick={scrollLeft}
-          className="absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl hover:text-amber-600"
+          className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl hover:text-amber-600 sm:h-10 sm:w-10"
           aria-label="Scroll left"
         >
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -29,7 +29,7 @@ const ProductSlider = () => {
         </button>
         <div
           ref={sliderRef}
-          className="no-scrollbar flex gap-4 overflow-x-auto scroll-smooth px-14"
+          className="no-scrollbar flex gap-3 overflow-x-auto scroll-smooth px-8 sm:gap-4 sm:px-12 lg:px-14"
         >
           {products.map((product) => (
             <ProductCard key={product.id} />
@@ -38,7 +38,7 @@ const ProductSlider = () => {
         <button
           type="button"
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl hover:text-amber-600"
+          className="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg transition hover:shadow-xl hover:text-amber-600 sm:h-10 sm:w-10"
           aria-label="Scroll right"
         >
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

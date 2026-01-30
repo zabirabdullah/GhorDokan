@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Navbar />
-      <main className="space-y-12 pb-12 pt-8">
+      <main className="space-y-8 pb-10 pt-6 sm:space-y-12 sm:pb-12 sm:pt-8">
         <Banner />
         <SliderTitle title="Best Sellers"/>
         <ProductSlider />
