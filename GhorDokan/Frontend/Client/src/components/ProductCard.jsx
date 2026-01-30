@@ -28,16 +28,25 @@ const ProductCard = () => {
         <h3 className="text-lg font-bold text-[#0a2351]">Honey</h3>
         <p className="mt-0.5 text-xs text-gray-500 line-clamp-1">100% natural organic honey</p>
         
-        <div className="mt-1">
-          <p className="text-amber-600 font-semibold text-sm">
-            Price: 100 BDT
-          </p>
-          <p className="text-xs text-gray-500">Quantity: 1 Kg</p>
+        <div>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-amber-600 font-semibold text-l">
+                Price: 100 BDT
+              </p>
+              <p className="text-sm text-gray-500">Quantity: 1 Kg</p>
+              </div>
+              <div className="space-x-2">
+              <button className="bg-gray-200 px-2 py-1 rounded text-gray-700 font-bold" type="button" onClick={handleDecrease}>−</button>
+              <span className="text-lg font-semibold">{quantity}</span>
+              <button className="bg-gray-200 px-2 py-1 rounded text-gray-700 font-bold" type="button" onClick={handleIncrease}>+</button>
+              </div>
+          </div>
         </div>
       </div>
 
       {/* Quantity Selector */}
-      <div className="mt-3 flex items-center justify-between rounded-xl bg-[#f1f3f6] px-4 py-1.5">
+      {/* <div className="mt-3 flex items-center justify-between rounded-xl bg-[#f1f3f6] px-4 py-1.5">
         <button
           type="button"
           onClick={handleDecrease}
@@ -53,7 +62,7 @@ const ProductCard = () => {
         >
           &#43;
         </button>
-      </div>
+      </div> */}
 
       {/* Add to Cart Button */}
       <button
