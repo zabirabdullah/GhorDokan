@@ -17,7 +17,18 @@ const Navbar = () => {
           <Link to="/signin" className="transition hover:opacity-80">Sign In</Link>
           <Link to="/products" className="transition hover:opacity-80">Products</Link>
           <button className="transition hover:opacity-80">Orders</button>
-          <button className="transition hover:opacity-80">Cart</button>
+          <Link
+            to="/cart"
+            className="relative flex items-center justify-center transition hover:opacity-80"
+            title="Shopping Cart"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 flex items-center justify-center text-xs font-bold">
+              0
+            </span>
+          </Link>
         </nav>
         <button
           type="button"
@@ -40,7 +51,12 @@ const Navbar = () => {
             <Link to="/signin" className="rounded-lg px-3 py-2 text-left transition hover:bg-white/10">Sign In</Link>
             <Link to="/products" className="rounded-lg px-3 py-2 text-left transition hover:bg-white/10">Products</Link>
             <button className="rounded-lg px-3 py-2 text-left transition hover:bg-white/10">Orders</button>
-            <button className="rounded-lg px-3 py-2 text-left transition hover:bg-white/10">Cart</button>
+            <Link to="/cart" className="rounded-lg px-3 py-2 text-left transition hover:bg-white/10 flex items-center gap-2">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              Cart
+            </Link>
           </div>
         </div>
       )}
