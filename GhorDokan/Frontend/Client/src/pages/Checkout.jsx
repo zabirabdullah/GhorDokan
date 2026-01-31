@@ -57,7 +57,7 @@ const Checkout = () => {
 
   const cancelOrder = () => {
     setShowConfirmModal(false);
-    toast.info('Order cancelled');
+    toast.info('Order not placed');
   };
 
   return (
