@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackButton from '../components/BackButton';
 
-const Checkout = () => {
+const Checkout = ({ isAuthenticated, user, toggleAuth }) => {
   const navigate = useNavigate();
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -62,7 +62,7 @@ const Checkout = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-      <Navbar />
+      <Navbar isAuthenticated={isAuthenticated} user={user} toggleAuth={toggleAuth} />
 
       <main className="flex-grow px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-6xl">

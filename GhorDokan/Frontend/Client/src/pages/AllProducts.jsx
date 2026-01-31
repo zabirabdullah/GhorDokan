@@ -5,7 +5,7 @@ import BackButton from "../components/BackButton";
 import ProductCard from "../components/ProductCard";
 import ProductCard2 from "../components/ProductCard2";
 
-const AllProducts = () => {
+const AllProducts = ({ isAuthenticated, user, toggleAuth }) => {
   const [filterCategory, setFilterCategory] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -43,7 +43,7 @@ const AllProducts = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-      <Navbar />
+      <Navbar isAuthenticated={isAuthenticated} user={user} toggleAuth={toggleAuth} />
 
       <main className="flex-grow px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">

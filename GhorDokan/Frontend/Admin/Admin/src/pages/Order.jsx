@@ -13,7 +13,7 @@ const Order = () => {
 
     const statuses = [
   { key: 'pending', label: 'Pending', bgColor: 'bg-yellow-500', shadowColor: 'shadow-yellow-400', faintBg: 'bg-yellow-50', faintText: 'text-yellow-700', faintBorder: 'border-yellow-200' },
-  { key: 'received', label: 'Received', bgColor: 'bg-blue-500', shadowColor: 'shadow-blue-400', faintBg: 'bg-blue-50', faintText: 'text-blue-700', faintBorder: 'border-blue-200' },
+  { key: 'processing', label: 'Processing', bgColor: 'bg-blue-500', shadowColor: 'shadow-blue-400', faintBg: 'bg-blue-50', faintText: 'text-blue-700', faintBorder: 'border-blue-200' },
   { key: 'confirmed', label: 'Confirmed', bgColor: 'bg-indigo-500', shadowColor: 'shadow-indigo-400', faintBg: 'bg-indigo-50', faintText: 'text-indigo-700', faintBorder: 'border-indigo-200' },
   { key: 'delivering', label: 'Delivering', bgColor: 'bg-purple-500', shadowColor: 'shadow-purple-400', faintBg: 'bg-purple-50', faintText: 'text-purple-700', faintBorder: 'border-purple-200' },
   { key: 'delivered', label: 'Delivered', bgColor: 'bg-green-500', shadowColor: 'shadow-green-400', faintBg: 'bg-green-50', faintText: 'text-green-700', faintBorder: 'border-green-200' },
@@ -238,7 +238,7 @@ const Order = () => {
         {/* Order Status Section */}
         <div className="rounded-lg border border-gray-200 bg-white p-4 shadow">
           <h3 className="mb-3 text-lg font-bold text-gray-900">Order Status</h3>
-          <div className="grid gap-2 sm:grid-cols-4 lg:grid-cols-7">
+          <div className="grid gap-4 sm:grid-cols-4 lg:grid-cols-7">
             {statuses.map((status) => (
               <button
   key={status.key}

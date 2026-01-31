@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import ProductSlider from '../components/ProductSlider';
 import SliderTitle from '../components/SliderTitle';
 
-const Home = () => {
+const Home = ({ isAuthenticated, user, toggleAuth }) => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      <Navbar />
+      <Navbar isAuthenticated={isAuthenticated} user={user} toggleAuth={toggleAuth} />
       <main className="space-y-8 pb-10 pt-6 sm:space-y-12 sm:pb-12 sm:pt-8">
         <Banner />
         <SliderTitle title="Best Sellers"/>
