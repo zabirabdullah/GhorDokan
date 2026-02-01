@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -10,6 +10,9 @@ const ProductDetails = ({ isAuthenticated, user, toggleAuth }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
+  const imageContainerRef = useRef(null);
 
   const products = useMemo(
     () => [
@@ -51,6 +54,25 @@ const ProductDetails = ({ isAuthenticated, user, toggleAuth }) => {
     navigate(product.id === '1' ? '/product/2' : '/product/1');
   };
 
+  const handleMouseEnter = () => {
+    setIsZoomed(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsZoomed(false);
+    setZoomPosition({ x: 0, y: 0 });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!imageContainerRef.current) return;
+
+    const rect = imageContainerRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    setZoomPosition({ x, y });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Navbar isAuthenticated={isAuthenticated} user={user} toggleAuth={toggleAuth} />
@@ -84,12 +106,30 @@ const ProductDetails = ({ isAuthenticated, user, toggleAuth }) => {
         </div>
 
         <section className="grid gap-10 rounded-3xl border border-gray-100 bg-white p-6 shadow-lg md:grid-cols-[1.1fr_1fr] md:p-10">
-          <div className="flex items-center justify-center rounded-2xl bg-[#f8f8f8] p-6">
+          <div
+            ref={imageContainerRef}
+            className="relative flex items-center justify-center overflow-hidden rounded-2xl bg-[#f8f8f8] p-6"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseMove}
+          >
             <img
               src={product.image}
               alt={product.name}
-              className="h-72 w-auto object-contain mix-blend-multiply md:h-96"
+              className={`h-72 w-auto object-contain mix-blend-multiply transition-transform duration-300 ${
+                isZoomed ? 'scale-200' : 'scale-100'
+              }`}
+              style={
+                isZoomed
+                  ? {
+                      transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`,
+                    }
+                  : {}
+              }
             />
+            {isZoomed && (
+              <div className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-amber-400/30" />
+            )}
           </div>
 
           <div className="flex flex-col gap-4">
