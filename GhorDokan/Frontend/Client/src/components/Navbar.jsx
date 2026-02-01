@@ -19,6 +19,7 @@ const Navbar = ({ isAuthenticated, user, toggleAuth }) => {
             <>
               <Link to="/dashboard" className="transition hover:opacity-80">Dashboard</Link>
               <Link to="/products" className="transition hover:opacity-80">Products</Link>
+              <Link to="/orders" className="transition hover:opacity-80">Orders</Link>
               <Link
                 to="/favorites"
                 className="relative flex items-center justify-center transition hover:opacity-80"
@@ -28,7 +29,6 @@ const Navbar = ({ isAuthenticated, user, toggleAuth }) => {
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
               </Link>
-              <Link to="/orders" className="transition hover:opacity-80">Orders</Link>
               <Link
                 to="/cart"
                 className="relative flex items-center justify-center transition hover:opacity-80"
